@@ -537,7 +537,6 @@ int
 countp(){
   struct proc *p;
 
-
   sti();
   int c = 0;
   acquire(&ptable.lock);
