@@ -538,11 +538,11 @@ countp(){
   struct proc *p;
 
   sti();
-  int c;
+  int c == 0;
   acquire(&ptable.lock);
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
     if(p->state != (UNUSED || ZOMBIE))
-      c++;
+      c = c + 1;
   }
   cprintf("El numero de procesos sin zombies & unused: %d", c);
   release (&ptable.lock);
