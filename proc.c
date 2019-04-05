@@ -545,7 +545,7 @@ countp(){
       c++;
   }
   cprintf("El numero de procesos sin zombies & unused: %d", c);
-  release (%ptable.lock);
+  release (&ptable.lock);
 
   return 22;
 }
