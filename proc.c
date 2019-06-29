@@ -173,7 +173,7 @@ growproc(int n)
   switchuvm(curproc);
   return 0;
 }
-int VirtualToPhysical(void){
+int physicalnum(void){
     struct proc *process = myproc();   
     int numeriyo;
 
