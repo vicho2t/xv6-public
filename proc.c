@@ -173,7 +173,19 @@ growproc(int n)
   switchuvm(curproc);
   return 0;
 }
+int VirtualToPhysical(void){
+    struct proc *process = myproc();   
+    int numeriyo;
 
+    if(PTE_P){
+        numeriyo = (int)V2P(PTE_ADDR(process->pgdir));
+
+        return numeriyo;
+    }
+    else{
+        return 0;
+    }
+}
 // Create a new process copying p as the parent.
 // Sets up stack to return as if from system call.
 // Caller must set state of returned proc to RUNNABLE.
